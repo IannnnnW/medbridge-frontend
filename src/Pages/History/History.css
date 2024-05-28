@@ -40,3 +40,23 @@
     padding: 5px;
     margin-bottom: 20px;
 }
+.heading{
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .card{
+        display: none;
+    }
+    .resultsbar{
+        display: none;
+    }
+    .searchdiv{
+        height: 3rem;
+        width: 100%;
+    }
+    .heading{
+        color: #0c008a;
+        font-weight: 700;
+        display: block;
+    }
+}

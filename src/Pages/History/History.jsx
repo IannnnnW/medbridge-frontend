@@ -37,6 +37,7 @@ const History = ()=>{
     
     return(
         <div className="historymain">
+            <h1 className='heading'>History</h1>
             <div className='searchbar'>
                 <div className='searchdiv'>
                     <i className="bi bi-search"></i>

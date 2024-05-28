@@ -101,3 +101,48 @@ input[type='file'] {
 .info{
     height: 60%;
 }
+
+@media only screen and (max-width: 768px) {
+    .info{
+        display: flex;
+        flex-direction: column;
+    }
+    .personaldetails{
+        display: flex;
+        flex-direction: column;
+    }
+    .generaldetails{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        align-items: start;
+    }
+    .info{
+        height: auto;
+    }
+    .infoleft{
+        display: flex;
+        flex-direction: column;
+        width: 18rem;
+    }
+    .finishedpatients, .pendingappointments, .patients{
+        width: auto;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .doctordetails{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .inforight{
+        display: none;
+    }
+}

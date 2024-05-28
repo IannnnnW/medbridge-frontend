@@ -7,7 +7,6 @@
 .appmain{
     display: flex;
     flex-direction: column;
-    height: 98vh;
     overflow-y: scroll;
 }
 

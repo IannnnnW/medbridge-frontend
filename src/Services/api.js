@@ -2,7 +2,7 @@
 // Create a schedule
 import axios from "axios";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-const authToken = import.meta.env.VITE_VIDEOSDK_TOKEN
+const authToken = import.meta.env.VITE_VIDEOSDKAUTHTOKEN;
 
 const Schedule = {
     createSchedule: async (schedule) => {

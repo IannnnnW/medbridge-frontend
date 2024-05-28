@@ -5,10 +5,9 @@ a{
     margin-bottom: 20px;
 }
 .SideBar{
-    margin: 10px;
     background-color: #B6D0E2;
-    border-radius: 20px;
-    height: 97vh;
+    border-radius: 0px 20px 20px 0px;
+    height: 100vh;
 }
 .text-active{
     color: #0c008a;
@@ -28,11 +27,38 @@ a{
 .dropdown-menu ul{
     padding: 5px;
 }
-
+.brain{
+    display: none;
+}
 .logoutbtn{
-    width: 65%;
+    margin-top: 25rem;
+    color: #0c008a;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 768px) {
-    
+    .SideBar{
+        border-radius: 0px 20px 20px 0px;
+    }
+    .sidebaricon{
+        font-size: 2rem;
+    }
+    .nav-pills{
+        gap: 9rem;
+    }
+    .logoutbtn{
+        margin-top: auto;
+    }
+    .text-active{
+        color: #0c008a;
+        padding: 10px;
+        border-bottom: 5px solid  #0c008a;
+        font-weight: 700;
+    }    
+    .brain{
+        display: block;
+    }
+    .logo{
+        display: none;
+    }
 }

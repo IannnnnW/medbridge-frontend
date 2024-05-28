@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { CiCircleChevLeft } from "react-icons/ci";
 import { IoIosPersonAdd } from "react-icons/io";
 import { TbFolderCancel } from "react-icons/tb";
 import './DashBoard.css'
@@ -87,7 +86,7 @@ export default function DashBoard(){
     }
     return(
         <div className='main'>
-            <h1 className='greeting'><CiCircleChevLeft /> {time < 12 ? 'Good Morning' : time <= 16 ? 'Good Afternoon' : 'Good Evening'}</h1>
+            <h1 className='greeting'> {time < 12 ? 'Good Morning' : time <= 16 ? 'Good Afternoon' : 'Good Evening'}</h1>
             <div className='personaldetails'>
                 <div className='doctordetails'>
                     {
@@ -101,7 +100,7 @@ export default function DashBoard(){
                         data-testid="loader"
                       />
                       :
-                      <img src= {authUser.avatar ? `http://192.168.0.153:3000/uploads/${authUser.avatar.file_name}` : Person} data-bs-toggle="modal" data-bs-target={!authUser.avatar ? "#editdialog" : null} className='displayImage'/>
+                      <img src= {authUser.avatar ? `${import.meta.env.VITE_BASE_URL}/uploads/${authUser.avatar.file_name}` : Person} data-bs-toggle="modal" data-bs-target={!authUser.avatar ? "#editdialog" : null} className='displayImage'/>
                     }
                     <div className='title'>
                         <h4 style={{fontWeight: '700'}}>{authUser.name}</h4>
@@ -118,34 +117,33 @@ export default function DashBoard(){
                         <span><span className='label'>Email: </span><span>{authUser.email}</span></span>
                         <span><span className='label'>Rate: </span><span>shs. {authUser.rate} / hr</span></span>
                     </div>
-
-                    {/* Modal */}
-                    <div className="modal" tabIndex="-1" role="dialog" id='editdialog' aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <h5 className="modal-title">Edit Details</h5>
-                                    <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div className="modal-body d-flex flex-column">
-                                    <div className='d-flex flex-column mb-4'>
-                                        <div className='align-self-center'>
-                                            <div className='d-flex justify-content-center'>
-                                                {previewSrc ? <img src={previewSrc} alt="preview" className='addprofileicon' /> : <IoIosPersonAdd size={120}/>}
-                                            </div>
-                                            <div className='d-flex justify-content-center'>
-                                                <input type="file" id="myFile" name="avatar" accept="image" onChange={handleFileChange} />
-                                                <button className='clearbtn btn btn-danger' onClick={()=>setPreviewSrc('')}>Clear</button>
-                                            </div>
+                </div>
+            {/* Modal */}
+            <div className="modal" tabIndex="-1" role="dialog" id='editdialog' aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title">Edit Details</h5>
+                                <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body d-flex flex-column">
+                                <div className='d-flex flex-column mb-4'>
+                                    <div className='align-self-center'>
+                                        <div className='d-flex justify-content-center'>
+                                            {previewSrc ? <img src={previewSrc} alt="preview" className='addprofileicon' /> : <IoIosPersonAdd size={120}/>}
+                                        </div>
+                                        <div className='d-flex justify-content-center'>
+                                            <input type="file" id="myFile" name="avatar" accept="image" onChange={handleFileChange} />
+                                            <button className='clearbtn btn btn-danger' onClick={()=>setPreviewSrc('')}>Clear</button>
                                         </div>
                                     </div>
-                                    <button className='btn btn-primary w-25 align-self-center image-uploadbtn' onClick={(e)=>handleSubmit(e)} disabled={!imageResource}>Submit</button>
                                 </div>
+                                <button className='btn btn-primary w-25 align-self-center image-uploadbtn' onClick={(e)=>handleSubmit(e)} disabled={!imageResource}>Submit</button>
                             </div>
                         </div>
-                </div>
+                    </div>
                 </div>
             </div>
             <div className='info'>
@@ -172,17 +170,17 @@ export default function DashBoard(){
                         </div>
                     </div>
                 </div>
-                <div className='d-flex justify-content-center align-items-center inforight'>
-                    {
-                        completed == 0 && scheduledApp == 0 ?
-                        <h5><TbFolderCancel size={30}/> No Data to Display!</h5>
-                        : 
+                <div className='d-flex justify-content-center align-items-center'>
+                    <div className='inforight'>
+                    {completed == 0 && scheduledApp == 0 ?
+                    <h5><TbFolderCancel size={30}/> No Data to Display!</h5>
+                    : 
                         <Chart
-                        series={[completed, scheduledApp]} options={chartData.options} type="donut"
-                        />
-                    }
-                </div>
+                    series={[completed, scheduledApp]} options={chartData.options} type="donut"
+                    />}
+                    </div>
             </div>
-        </div>
+            </div>
+    </div>
     )
 }

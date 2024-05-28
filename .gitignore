@@ -23,4 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+<<<<<<< HEAD
+=======
+#Environement Variables
+>>>>>>> cf1bbde (Modified API Keys to be consumed from .env)
 .env

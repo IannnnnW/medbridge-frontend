@@ -4,9 +4,9 @@ import './Root.css'
 
 const Root = ()=>{
     return(
-    <div className="root">
+    <div className="maincontainer">
         <SideBar/>
-        <Outlet className="outlet"/>
+        <Outlet/>
     </div>
     )
 }
