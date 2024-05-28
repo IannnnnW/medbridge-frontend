@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "http://192.168.0.153:3000"
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const Auth = {
     signUp: async (doctor) => {

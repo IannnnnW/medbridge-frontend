@@ -8,6 +8,8 @@ import logo from '../../assets/logo-main.png'
 import FadeLoader from "react-spinners/FadeLoader";
 
 export default function Login(){
+
+   
     const navigate = useNavigate()
 
     const { setAuthUser, setAuthenticated } = useContext(AuthContext)
