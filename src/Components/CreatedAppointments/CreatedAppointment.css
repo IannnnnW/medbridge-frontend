@@ -28,3 +28,22 @@
     padding: 5px;
     width: 40%;
 }
+
+@media only screen and (max-width: 768px) {
+    .availablestatus{
+        display: none;
+    }
+    .actions{
+        display: none;
+    }
+    .createdappointment{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        border: 1px solid #B6D0E2;
+        border-radius: 5px;
+        padding: 5px;
+        width: 90%;
+    }
+}

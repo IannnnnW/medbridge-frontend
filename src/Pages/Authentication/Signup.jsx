@@ -61,7 +61,7 @@ export default function Signup(){
                 <div className="mb-2">
                     <input placeholder={'Email'} type="email" className="form-control" autoComplete='username' id="email" aria-describedby="email" value={details.email} onChange={(e)=>setDetails({...details, email: e.target.value})} required/>
                 </div>
-                <div className='d-flex justify-content-between'>
+                <div className='d-flex justify-content-between row'>
                     <div className="mb-2">
                         <input placeholder={'Professional Title'} type="text" className="form-control" id="title" value={details.pro_title} onChange={(e)=>setDetails({...details, pro_title: e.target.value})} required/>
                     </div>

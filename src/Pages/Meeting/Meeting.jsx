@@ -67,7 +67,7 @@ function JoinScreen({ getMeetingAndToken }) {
     await getMeetingAndToken(meetingId);
   };
   return (
-    <div className="d-flex justify-content-center align-items-center mt-5">
+    <div className="d-flex justify-content-center align-items-center mx-5">
       <div className="d-flex flex-column">
         <h4 className="text-active"> Join the call</h4>
         <span>The patient shall be sent the Call ID and they will join you shortly.</span>

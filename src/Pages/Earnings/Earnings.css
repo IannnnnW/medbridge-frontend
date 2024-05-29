@@ -11,3 +11,13 @@
     border-radius: 5px;
     padding: 10px;
 }
+@media only screen and (max-width: 768px) {
+    .summary{
+        display: flex;    
+        flex-direction: column;
+    }
+    .paymentrecords{
+        overflow-y: scroll;
+        height: 32rem;
+    }
+}

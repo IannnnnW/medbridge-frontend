@@ -15,7 +15,7 @@
 .todaysappointment{
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgrey;
+    border: 1px solid #B6D0E2;
     border-radius: 20px;
     padding: 10px;
     cursor: pointer;
@@ -47,4 +47,14 @@
 .sendlink:hover{
     background-color: #0c0557;
     color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    .appointment > .status{
+        display: none;
+    }
+    .appointment{
+        display: flex;
+        justify-content: space-between;
+    }
 }

@@ -5,6 +5,13 @@
    gap: 0;
    height: 100vh;
 }
+.loginsection{
+    position: relative;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 0;
+   height: 100vh;
+}
 .signupleft{
     position: relative;
     z-index: 1;
@@ -29,6 +36,7 @@
     padding: 1rem;
     margin-left: -1.5rem; /* Move the form to the left */
     background-color: rgba(255, 255, 255, 1); /* Add a semi-transparent white background */
+    overflow-y: scroll;
 }
 .center{
     display: flex;
@@ -131,5 +139,13 @@
     .form-control{
         padding: 0.8rem;
     }
-    
+    .signupleft{
+        display: none;
+    }
+    .signup{
+       display: flex;
+       flex-direction: column;
+       margin-left: 1rem; /* Move the form to the left */
+
+    }
 }

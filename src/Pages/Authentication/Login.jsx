@@ -37,7 +37,7 @@ export default function Login(){
     }
 
     return(
-        <div className="signup">
+        <div className="loginsection">
             <div className='loginleft'>
                 <img src={logo} style={{height:'42px', width:'190px'}} className='logo-image'/>
             </div>

@@ -36,7 +36,7 @@ export default function Earnings(){
         <div className='m-3'>
             <h2 className='mb-3' style={{'fontWeight':700, 'color': '#0c008a'}}>Earnings</h2>
             <h5>Summary</h5>
-            <div className='d-flex gap-3 mb-5'>
+            <div className='d-flex gap-3 mb-5 summary'>
                 <div className='totalearnings p-2'>
                     <CiBadgeDollar size={80} color='#B6D0E2'/>
                     <span>Total Earnings</span>
@@ -59,7 +59,7 @@ export default function Earnings(){
                         <input className='search' placeholder='Search Transaction' onChange={(e) =>setTargetValue(e.target.value)} />
                     </div>
                 </div>
-                <div className='d-flex flex-column'>
+                <div className='d-flex flex-column paymentrecords'>
                     {isLoading ? <Skeleton count={5}/> : targetValue.length === 0 ? earnings.length ? earnings.map((earning) => <Transaction key={earning.payment_ID} transactionId={earning.payment_ID} date={earning.date} time={earning.time} amount={earning.amount} />) : <h5 className='align-self-center'><TbFolderCancel/> No Records!</h5> : earnings_2.map((earning) => <Transaction key={earning.payment_ID} transactionId={earning.payment_ID} date={earning.date} time={earning.time} amount={earning.amount} />) }
                 </div>
             </div>
